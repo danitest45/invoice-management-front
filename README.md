@@ -106,7 +106,7 @@ Este frontend depende da API do projeto backend estar em execução.
 
 Repositório do backend:
 
-[Backend do desafio técnico]([https://github.com/topics/invoice-management?utm_source=chatgpt.com](https://github.com/danitest45/InvoiceManagement))
+[Backend do desafio técnico]([https://github.com/topics/invoice-management?utm_source=chatgpt.com](https://github.com/danitest45/InvoiceManagement)
 
 Antes de iniciar o frontend, execute o backend normalmente pelo Visual Studio.
 
