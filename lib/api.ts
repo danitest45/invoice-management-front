@@ -61,11 +61,21 @@ export async function addInvoiceItem(
   id: string | number,
   payload: AddInvoiceItemPayload,
 ) {
-  const { data } = await api.post<ApiInvoice>(`/invoices/${id}/items`, payload);
-  return mapInvoice(data);
+  const response = await api.post<ApiInvoice | null>(`/invoices/${id}/items`, payload);
+
+  if (response.status === 204 || !response.data) {
+    return null;
+  }
+
+  return mapInvoice(response.data);
 }
 
 export async function closeInvoice(id: string | number) {
-  const { data } = await api.put<ApiInvoice>(`/invoices/${id}/close`);
-  return mapInvoice(data);
+  const response = await api.put<ApiInvoice | null>(`/invoices/${id}/close`);
+
+  if (response.status === 204 || !response.data) {
+    return null;
+  }
+
+  return mapInvoice(response.data);
 }
